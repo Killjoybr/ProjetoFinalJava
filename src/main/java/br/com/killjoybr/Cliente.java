@@ -4,11 +4,13 @@ public class Cliente {
     private int id;
     private String nome;
     private String telefone;
-
-    public Cliente(int id, String nome, String telefone) {
+    private Pagamentos[] comprasEfeutadas;
+    
+    public Cliente(int id, String nome, String telefone, Pagamentos[] comprasEfeutadas) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
+        this.comprasEfeutadas = comprasEfeutadas;
     }
 
     public int getId() {
@@ -35,4 +37,13 @@ public class Cliente {
         this.telefone = telefone;
     }
 
+    public Pagamentos[] getComprasEfeutadas() {
+        return comprasEfeutadas;
+    }
+
+    public void setComprasEfeutadas(Pagamentos[] comprasEfeutadas) {
+        this.comprasEfeutadas = comprasEfeutadas;
+    }
+
+    
 }
