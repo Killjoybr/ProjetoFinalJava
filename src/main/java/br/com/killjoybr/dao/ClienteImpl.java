@@ -2,6 +2,8 @@ package br.com.killjoybr.dao;
 
 import br.com.killjoybr.models.Cliente;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClienteImpl implements ClienteDao{
     private static final String INSERT_CLIENTE = "INSERT INTO CLIENTES (nome, telefone) VALUES (?, ?)";
@@ -50,8 +52,12 @@ public class ClienteImpl implements ClienteDao{
     }
 
     @Override
-    public Cliente[] getClientes() throws SQLException {
-        // TODO Auto-generated method stub
+    public List<Cliente> getClientes() throws SQLException {
+        List<Cliente> clientes = new ArrayList<>();
+        PreparedStatement ps = connection.prepareStatement(SELECT_CLIENTES);
+        ResultSet rs = ps.executeQuery();
+
+        
         return null;
     }
 
