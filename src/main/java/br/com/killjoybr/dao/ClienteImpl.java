@@ -41,7 +41,8 @@ public class ClienteImpl implements ClienteDao{
        if (rs.next()) {
            cliente = new Cliente(rs.getInt("id"),
            rs.getString("nome"),
-           rs.getString("telefone")
+           rs.getString("telefone"),
+           rs.getArray("pagamentos")
            );
        }
         ps.close();
