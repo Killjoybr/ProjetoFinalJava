@@ -1,4 +1,4 @@
-package br.com.killjoybr;
+package br.com.killjoybr.models;
 
 public class Cliente {
     private int id;
