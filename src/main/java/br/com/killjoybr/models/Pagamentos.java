@@ -1,4 +1,4 @@
-package br.com.killjoybr;
+package br.com.killjoybr.models;
 
 import java.sql.Date;
 
