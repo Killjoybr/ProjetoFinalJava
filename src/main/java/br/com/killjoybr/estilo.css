@@ -1,0 +1,21 @@
+}LojaVirtual/
+├── src/
+│   ├── clientes/
+│   │   ├── Alteracao.java
+│   │   ├── Cadastro.java
+│   │   ├── Consulta.java
+│   │   ├── Exclusao.java
+│   │   └── Index.java
+│   ├── cursos/
+│   │   ├── Alteracao.java
+│   │   ├── Cadastro.java
+│   │   ├── Consulta.java
+│   │   ├── Exclusao.java
+│   │   └── Index.java
+│   ├── pagamentos/
+│   │   ├── Alteracao.java
+│   │   ├── Cadastro.java
+│   │   ├── Consulta.java
+│   │   ├── Exclusao.java
+│   │   └── Index.java
+│   └── LojaVirtual.java
