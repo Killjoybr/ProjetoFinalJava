@@ -1,15 +1,18 @@
 package br.com.killjoybr.models;
 
+import java.sql.Array;
+
 public class Cliente {
     private int id;
     private String nome;
     private String telefone;
-    private Pagamentos[] comprasEfeutadas;
+    private Array pagamentos;
     
-    public Cliente(int id, String nome, String telefone) {
+    public Cliente(int id, String nome, String telefone, Array pagamentos) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
+        this.pagamentos = pagamentos;
     }
 
     public int getId() {
@@ -36,12 +39,12 @@ public class Cliente {
         this.telefone = telefone;
     }
 
-    public Pagamentos[] getComprasEfeutadas() {
-        return comprasEfeutadas;
+    public Array getPagamentos() {
+        return pagamentos;
     }
 
-    public void setComprasEfeutadas(Pagamentos[] comprasEfeutadas) {
-        this.comprasEfeutadas = comprasEfeutadas;
+    public void setPagamentos(Array pagamentos) {
+        this.pagamentos = pagamentos;
     }
 
     
