@@ -6,11 +6,10 @@ public class Cliente {
     private String telefone;
     private Pagamentos[] comprasEfeutadas;
     
-    public Cliente(int id, String nome, String telefone, Pagamentos[] comprasEfeutadas) {
+    public Cliente(int id, String nome, String telefone) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
-        this.comprasEfeutadas = comprasEfeutadas;
     }
 
     public int getId() {
