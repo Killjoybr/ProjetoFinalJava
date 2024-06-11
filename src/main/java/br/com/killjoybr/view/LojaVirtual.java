@@ -1,4 +1,5 @@
-package Front.css;
+package br.com.killjoybr.view;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,12 +16,12 @@ public class LojaVirtual {
 	        
 	        // Cria menus
 	        JMenu clientesMenu = new JMenu("Clientes");
-	        JMenu cursosMenu = new JMenu("Cursos");
+	        JMenu produtosMenu = new JMenu("Produtos");
 	        JMenu pagamentosMenu = new JMenu("Pagamentos");
 	        
 	        // Adiciona menus à barra de menu
 	        menuBar.add(clientesMenu);
-	        menuBar.add(cursosMenu);
+	        menuBar.add(produtosMenu);
 	        menuBar.add(pagamentosMenu);
 	        
 	        // Cria itens de menu para "Clientes"
@@ -37,19 +38,19 @@ public class LojaVirtual {
 	        clientesMenu.add(clientesConsulta);
 	        clientesMenu.add(clientesExclusao);
 	        
-	        // Cria itens de menu para "Cursos"
-	        JMenuItem cursosIndex = new JMenuItem("Index");
-	        JMenuItem cursosCadastro = new JMenuItem("Cadastro");
-	        JMenuItem cursosAlteracao = new JMenuItem("Alteração");
-	        JMenuItem cursosConsulta = new JMenuItem("Consulta");
-	        JMenuItem cursosExclusao = new JMenuItem("Exclusão");
+	        // Cria itens de menu para "Produtos"
+	        JMenuItem produtosIndex = new JMenuItem("Index");
+	        JMenuItem produtosCadastro = new JMenuItem("Cadastro");
+	        JMenuItem produtosAlteracao = new JMenuItem("Alteração");
+	        JMenuItem produtosConsulta = new JMenuItem("Consulta");
+	        JMenuItem produtosExclusao = new JMenuItem("Exclusão");
 	        
-	        // Adiciona itens de menu ao menu "Cursos"
-	        cursosMenu.add(cursosIndex);
-	        cursosMenu.add(cursosCadastro);
-	        cursosMenu.add(cursosAlteracao);
-	        cursosMenu.add(cursosConsulta);
-	        cursosMenu.add(cursosExclusao);
+	        // Adiciona itens de menu ao menu "Produtos"
+	        produtosMenu.add(produtosIndex);
+	        produtosMenu.add(produtosCadastro);
+	        produtosMenu.add(produtosAlteracao);
+	        produtosMenu.add(produtosConsulta);
+	        produtosMenu.add(produtosExclusao);
 	        
 	        // Cria itens de menu para "Pagamentos"
 	        JMenuItem pagamentosIndex = new JMenuItem("Index");
