@@ -33,8 +33,19 @@ public class ClienteImpl implements ClienteDao{
 
     @Override
     public Cliente getClienteId(int id) throws SQLException {
-        // TODO Auto-generated method stub
-        return null;
+       PreparedStatement ps = connection.prepareStatement(SELECT_CLIENTE_ID);
+       ps.setInt(1, id);
+       ResultSet rs = ps.executeQuery();
+
+       Cliente cliente = null;
+       if (rs.next()) {
+           cliente = new Cliente(rs.getInt("id"),
+           rs.getString("nome"),
+           rs.getString("telefone")
+           );
+       }
+        ps.close();
+        return cliente;
     }
 
     @Override
