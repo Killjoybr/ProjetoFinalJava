@@ -71,3 +71,8 @@ public Cliente cadastrarCliente(Cliente cliente)   throws SQLException {
 }
 ```
 
+## Stack utilizada
+
+**Front-end:** Java Swing, HTML5
+
+**Back-end:** Java, JDBC, H2 database, Maven
