@@ -1,10 +1,42 @@
 DROP TABLE IF EXISTS clientes;
 
--- Criando a tabela clientes no banco de dados utilizando MySQL
+-- Criando a tabela clientes
 CREATE TABLE clientes (
 	id INT  IDENTiTY(1,1),
 	nome VARCHAR(255) NOT NULL,
 	telefone VARCHAR(13) NOT NULL,
+);
+
+DROP TABLE IF EXISTS produtos;
+
+-- Criando a tabela produtos no banco de dados
+CREATE TABLE produtos (
+	id INT  NOT NULL AUTO_INCREMENT PRIMARY KEY UNIQUE,
+    nome VARCHAR(255) NOT NULL,
+	qtd INT NOT NULL,
+    descricao VARCHAR(255) NOT NULL,
+    preco Double(12,2) NOT NULL;
+);
+
+DROP TABLE IF EXISTS pagamentos;
+
+-- Criando a tabela pagamentos no banco de dados
+CREATE TABLE pagamentos (
+	id INT  NOT NULL AUTO_INCREMENT PRIMARY KEY UNIQUE,
+	idCliente INT NOT NULL REFERENCES clientes(id) ON DELETE CASCADE,
+	data DATE NOT NULL,
+    valorTotal Double(12,2) NOT NULL,
+);
+
+DROP TABLE IF EXISTS produtos_pagamentos;
+
+-- Criando tabela auxiliar para produtos e pagamentos
+CREATE TABLE produtos_pagamentos (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY UNIQUE,
+    id_produto INT NOT NULL,
+    id_pagamento INT NOT NULL,
+    FOREIGN KEY (id_produto) REFERENCES produtos(id),
+    FOREIGN KEY (id_pagamento) REFERENCES pagamentos(id)
 );
 
 -- Inserindo dados na tabela clientes, utilizando o Mockaroo
