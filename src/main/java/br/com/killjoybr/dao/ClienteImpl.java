@@ -10,7 +10,7 @@ public class ClienteImpl implements ClienteDao{
     private static final String SELECT_CLIENTES = "SELECT * FROM CLIENTES";
     private static final String SELECT_CLIENTE_ID = "SELECT id, nome, telefone FROM CLIENTES WHERE id = ?";
     private static final String DELETE_CLIENTE_ID = "DELETE FROM CLIENTES WHERE id = ?";
-    private static final String UPDATE_CLIENTE_ID = "UPDATE FROM CLIENTES WHERE id = ?";
+    private static final String UPDATE_CLIENTE_ID = "UPDATE CLIENTES SET nome = ?, telefone = ? WHERE id = ?";
 
     private Connection connection;
 
@@ -57,19 +57,37 @@ public class ClienteImpl implements ClienteDao{
         PreparedStatement ps = connection.prepareStatement(SELECT_CLIENTES);
         ResultSet rs = ps.executeQuery();
 
-        
-        return null;
+        while (rs.next()) {
+            Cliente cliente = new Cliente(rs.getInt("id"),
+            rs.getString("nome"),
+            rs.getString("telefone"),
+            rs.getArray("pagamentos")
+            );
+            clientes.add(cliente);
+        }
+
+        ps.close();
+        return clientes;
     }
 
     @Override
     public void atualizarCliente(Cliente cliente) throws SQLException {
-        // TODO Auto-generated method stub
-        
+        PreparedStatement ps = connection.prepareStatement(UPDATE_CLIENTE_ID);
+        ps.setInt(1, cliente.getId());
+        ps.setString(2, cliente.getNome());
+        ps.setString(3, cliente.getTelefone());
+
+        ps.executeUpdate();
+
+        ps.close();
     }
 
     @Override
     public void deletarCliente(int id) throws SQLException {
-        // TODO Auto-generated method stub
-        
+        PreparedStatement ps = connection.prepareStatement(DELETE_CLIENTE_ID);
+        ps.setInt(1, id);
+        ps.executeUpdate();
+
+        ps.close();
     }
 }
